@@ -1,0 +1,33 @@
+<div class="content">
+    <div id="available-appointments">
+        <h1>Available Appointments</h1>
+        <div class="appointment" *ngFor="let term of terms" (click)="selectTerm(term)" [ngClass]="{
+            'available': term.status === 'available',
+            'booked': term.status === 'booked',
+            'selected': selectedTerm === term
+        }">
+            <div>
+                <p class="time">{{ term.time }}</p>
+                <p class="service">{{ term.service }}</p>
+            </div>
+            <p class="status">{{ term.status }}</p>
+        </div>
+    </div>
+    <div id="appointment-details">
+        <h1>Appointment Details</h1>
+        <div class="details-content">
+            <p *ngIf="!selectedTerm" id="select-msg">Select a term to see details.</p>
+            <div *ngIf="selectedTerm">
+                <p><b>Date:</b> {{selectedTerm.date}}</p>
+                <p><b>Time:</b> {{selectedTerm.time}}</p>
+                <p><b>Service:</b> {{selectedTerm.service}}</p>
+                <p><b>Status:</b> {{selectedTerm.status}}</p>
+                <p *ngIf="selectedTerm.status === 'booked'"><b>Client:</b> {{ selectedTerm.clientName || '-' }}</p>
+                <p *ngIf="selectedTerm.status === 'booked'"><b>Phone:</b> {{ selectedTerm.phone || '-' }}</p>
+                <button *ngIf="selectedTerm.status === 'available'" (click)="reserveTerm()"
+                    id="reserve-btn">Reserve</button>
+                <p *ngIf="message" id="message">{{message}}</p>
+            </div>
+        </div>
+    </div>
+</div>

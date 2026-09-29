@@ -1,0 +1,106 @@
+.available {
+  background-color: rgb(237, 250, 239);
+}
+
+.booked {
+  background-color: rgb(264, 233, 236);
+}
+
+.appointment {
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  padding: 18px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.appointment.selected {
+  border: 2px solid #713C2A;
+}
+
+.appointment>div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.time {
+  font-weight: bold;
+  font-size: larger;
+  margin: 0;
+}
+
+.service {
+  color: #646464;
+  margin: 0;
+}
+
+.status {
+  text-transform: uppercase;
+  color: white;
+  border-radius: 16px;
+  padding: 6px;
+  width: max-content;
+  height: max-content;
+  align-self: center;
+  margin: 0;
+}
+
+.available>.status {
+  background-color: green;
+}
+
+.booked>.status {
+  background-color: red;
+}
+
+h1 {
+  color: #713C2A;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px;
+  margin: 0 auto;
+  width: 80%;
+}
+
+#appointment-details {
+  background-color: white;
+  padding: 18px;
+  border-radius: 12px;
+}
+
+#available-appointments {
+  background-color: white;
+  padding: 18px;
+  border-radius: 12px;
+}
+
+.details-content {
+  background-color: #FAF1EE;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+#select-msg {
+  color: #646464;
+}
+
+#message {
+  color: #713C2A;
+}
+
+#reserve-btn {
+  font-size: 16px;
+  color: white;
+  background-color: #713C2A;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin-top: 16px;
+}
